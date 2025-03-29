@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-container h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .faq-item button {
+            width: 100%;
+            background: #ff8c00;
+            color: white;
+            border: none;
+            padding: 10px;
+            text-align: left;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .faq-item button:hover {
+            background: #e07600;
+        }
+
+        .faq-item button:after {
+            content: '+';
+            float: right;
+            font-size: 20px;
+        }
+
+        .faq-item button.active:after {
+            content: '-';
+        }
+
+        .faq-item .content {
+            display: none;
+            padding: 10px;
+            background: #f1f1f1;
+            border-radius: 4px;
+            margin-top: 5px;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .faq-container {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .faq-item button {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .faq-item .content {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button>What is the purpose of this website?</button>
+            <div class="content">
+                <p>This website provides various services to cater to your needs, from home maintenance to professional consultations.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button>How can I contact customer support?</button>
+            <div class="content">
+                <p>You can reach our customer support team via the Contact Us page or call us directly at the provided helpline number.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button>Is there a refund policy?</button>
+            <div class="content">
+                <p>Yes, we have a refund policy in place. Please visit our Terms & Conditions page for more details.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add event listener to toggle FAQ content
+        document.querySelectorAll('.faq-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+
+                // Toggle active class
+                button.classList.toggle('active');
+
+                // Expand or collapse the content
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

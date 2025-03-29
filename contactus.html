@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f9;
+            height: 100vh;
+        }
+
+        
+        .logo {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            height: 100px;
+        }
+
+        .logo img {
+            width: 150px;
+        }
+
+        .logo p {
+            position: absolute;
+            left: 50%;
+            bottom: 0px;
+            font-size: 11px;
+            color: #555;
+        }
+
+        .contact-container {
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .contact-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-right: 20px;
+        }
+
+        .contact-container input,
+        .contact-container textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 20px;
+        }
+
+        .contact-container button:hover {
+            background-color: #45a049;
+        }
+
+        .contact-container .contact-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .contact-container .contact-info p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                padding: 15px;
+            }
+
+            .contact-container h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <div class="logo">
+            <img src="./assert/Screenshot_1-removebg-preview.png" alt="Logo">
+            <p>সময়ের সাথে</p>
+          </div>
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+            <p>Phone: +880 1300-805088</p>
+            <p>Email: contact@example.com</p>
+            <p>Address: 123 Main Street, City, Country</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            alert(`Thank you, ${name}! Your message has been sent.`);
+
+            // Reset form
+            event.target.reset();
+        });
+    </script>
+</body>
+</html>

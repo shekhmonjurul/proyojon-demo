@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Homepage</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: #f9e6cf;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            position: relative;
+            width: 100px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo p {
+            position: absolute;
+            bottom: -1px;
+            left: 25%;
+            font-size: 8px;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+
+        }
+
+        .nav ul li {
+            margin: 0 10px;
+        }
+
+        .nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .location-btn {
+            background-color: #f5a623;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #manu-icon{
+            display: none;
+        }
+        /* Main Content */
+        .main-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .search-bar input {
+            width: 80%;
+            padding: 10px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            width: 100%;
+        }
+
+
+
+        .category-card {
+            flex: 0 0 calc(100% / 3);
+            /* 3 items visible at a time */
+            max-width: calc(100% / 3);
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 256px;
+            object-fit: fill;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #f9e6cf;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: row;
+                text-align: left;
+                font-size: small;
+                width: 335px;
+                height: 136px;
+            }
+            .logo img {
+                height: 100px;
+                width: 100px;
+            }
+           
+            .nav ul {
+                display: none;
+                flex-direction: column;
+             
+            }
+
+            .nav ul li {
+               
+                margin: 5px 0;
+            }
+            #manu-icon{
+                display: block;
+                transition: 1s ease;
+                text-align: center;
+                color: #c08310;
+            }
+
+            .service-cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="./assert/Screenshot_1-removebg-preview.png" alt="Logo">
+                <p>সময়ের সাথে</p>
+            </div>
+            <nav class="nav">
+                <div id="manu-icon">☰</div>
+                <ul id="manu-item">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="./aboutus.html">About Us</a></li>
+                    <!-- <li><a href="./contactus.html">Contact Us</a></li>
+                    <li><a href="./services-categories.html">Services Categories</a></li> -->
+                    <li><a href="./login.html">Login/Sinup</a></li>
+                    <li><a href="./faqs.html">FAQs</a></li>
+                    <li><a href="./terms-policy.html">Terms & Conditions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div>
+
+    </div>
+
+    <main class="main-content">
+
+        <section class="service-categories">
+            <h3>Popular Service Categories</h3>
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="category-card">
+                        <img src="./assert/pest-control.jpg" alt="Pest Control">
+                        <p>Pest Control/Disinfection Services</p>
+                    </div>
+                    <div class="category-card">
+                        <img src="./assert/cleaning.jpg" alt="Cleaning">
+                        <p>Cleaning Services</p>
+                    </div>
+                    <div class="category-card">
+                        <img src="./assert//computer-repair.jpg" alt="Computer Repair">
+                        <p>Computer Repair Services</p>
+                    </div>
+                    <div class="category-card">
+                        <img src="./assert//shifting.jpg" alt="Shifting">
+                        <p>Office and Home Shifting Services</p>
+                    </div>
+                    <div class="category-card">
+                        <img src="./assert//plumbing.jpg" alt="Plumbing">
+                        <p>Plumbing Solution Services</p>
+                    </div>
+                    <div class="category-card">
+                        <img src="./assert//electrical.jpg" alt="Electrical">
+                        <p>Electrical Services</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <p>© 2024 PROYOJON. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Example: Toggle a menu in mobile view
+
+        // JavaScript for interactivity
+        const manuIcon = document.getElementById("manu-icon")
+        const manuItem=document.getElementById("manu-item")
+        // silder code start
+        const track = document.querySelector('.carousel-track');
+        const responsiveManue = document.getElementById("manu-responsive")
+        const notificationBtt = document.getElementById('notification-btn')
+        const notification = document.getElementById("notification-mgs")
+        const headear = document.querySelector("header-container")
+
+        let currentIndex = 0;
+
+        const updateCarousel = () => {
+            const cardWidth = document.querySelector('.category-card').offsetWidth;
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            console.log(cardWidth)
+        };
+
+        setInterval(() => {
+            console.log(currentIndex);
+            if (currentIndex != 3) {
+                Slider()
+            } else {
+                currentIndex = 0
+            }
+        }, 2000)
+
+
+        window.addEventListener('resize', updateCarousel); // Adjust carousel on window resize
+
+
+        function Slider() {
+            const totalItems = document.querySelectorAll('.category-card').length;
+            const itemsVisible = Math.round(track.offsetWidth / document.querySelector('.category-card').offsetWidth);
+
+            if (currentIndex < totalItems - itemsVisible) {
+                currentIndex++;
+                updateCarousel();
+            }
+        }
+
+
+        // silder code end
+
+        let click = false
+        let click1 = false
+
+        // document.querySelector(".menu-icon").addEventListener("click", () => {
+        //     if (click == false) {
+        //         document.querySelector(".menu-icon").innerHTML = "X"
+        //         responsiveManue.classList.add("active")
+
+        //         click = true
+        //     } else {
+        //         document.querySelector(".menu-icon").innerHTML = "☰"
+        //         responsiveManue.classList.remove("active")
+
+        //         click = false
+        //     }
+        //     notification.classList.remove("active")
+        //     click1 = false
+        // });
+
+        // notificationBtt.addEventListener("click", () => {
+        //     if (!click1) {
+        //         notification.classList.add("active")
+        //         click1 = true
+        //     } else {
+        //         notification.classList.remove("active")
+        //         click1 = false
+        //     }
+
+        //     responsiveManue.classList.remove("active")
+        //     document.querySelector(".menu-icon").innerHTML = "☰"
+        //     click = false
+        // })
+
+        manuIcon.addEventListener(
+            "click", ()=>{
+                    if(!click){
+                          manuItem.style.display = "block"
+                          manuIcon.innerText="X"
+                          click = true
+                    }else{
+                        manuItem.style.display = "none"
+                          manuIcon.innerText="☰"
+                          click = false
+                    }
+                  
+
+            }
+        )
+
+    </script>
+</body>
+
+</html>

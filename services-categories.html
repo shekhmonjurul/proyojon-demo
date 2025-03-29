@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Categories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #ff8c00;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .search-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            width: 80%;
+            max-width: 500px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-box button {
+            padding: 10px;
+            background-color: #ff8c00;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .search-box button:hover {
+            background-color: #e07600;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .category {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .category img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .category h3 {
+            margin-top: 15px;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .search-box input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Services Categories</h1>
+    </header>
+
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search for a service...">
+            <button onclick="filterCategories()">Search</button>
+        </div>
+
+        <div class="categories" id="categories">
+            <div class="category" data-name="Office and Home Shifting">
+                <img src="../assert/shifting.jpg" alt="Office and Home Shifting">
+                <h3>Office and Home Shifting</h3>
+            </div>
+            <div class="category" data-name="Plumbing Services">
+                <img src="../assert/plumbing.jpg" alt="Plumbing Services">
+                <h3>Plumbing Services</h3>
+            </div>
+            <div class="category" data-name="Electrical Services">
+                <img src="../assert/electrical.jpg" alt="Electrical Services">
+                <h3>Electrical Services</h3>
+            </div>
+            <div class="category" data-name="Cleaning Services">
+                <img src="../assert/cleaning.jpg" alt="Cleaning Services">
+                <h3>Cleaning Services</h3>
+            </div>
+            <div class="category" data-name="IT Support">
+                <img src="../assert/computer-repair.jpg" alt="IT Support">
+                <h3>IT Support</h3>
+            </div>
+            <div class="category" data-name="Carpentry Services">
+                <img src="../assert/pest-control.jpg" alt="Carpentry Services">
+                <h3>Carpentry Services</h3>
+            </div>
+            <div class="category" data-name="IT Support">
+                <img src="../assert/computer-repair.jpg" alt="IT Support">
+                <h3>IT Support</h3>
+            </div>
+            <div class="category" data-name="Carpentry Services">
+                <img src="../assert/pest-control.jpg" alt="Carpentry Services">
+                <h3>Carpentry Services</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function filterCategories() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const categories = document.querySelectorAll('.category');
+
+            categories.forEach(category => {
+                const categoryName = category.getAttribute('data-name').toLowerCase();
+                if (categoryName.includes(searchInput)) {
+                    category.style.display = 'block';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
